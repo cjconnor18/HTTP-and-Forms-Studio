@@ -15,34 +15,26 @@
       let actionURL=actions[engine.value];
       let form=document.getElementById('searchForm');
       form.setAttribute('action', actionURL);
-      console.log(actionURL);
     }
 
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
       let searchWord=document.querySelector('input[name=q]');
       let searchEngine=document.getElementsByName('engine');
-      console.log(searchEngine.length);
       
       searchForm.addEventListener('submit',function(){
         let searchEngineFalse=false;
         let x=0;
-        for(let i=0;i<searchEngine.length;i++){
-          console.log(i);
+        for(let i=0;i<searchEngine.length;i++){ 
           if(searchEngine[i].checked){
             x+=1;
-            console.log(i);
           }
-        
         }
         if(x>0){
           searchEngineFalse=true;
         }
-        console.log(x);
-        
         if (searchWord.value==="" || !searchEngineFalse){
           alert("All fields are required!");
-          
         } else {
           setSearchEngine();
         }
