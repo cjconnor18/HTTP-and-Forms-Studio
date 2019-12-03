@@ -21,7 +21,7 @@
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
       let searchWord=document.querySelector('input[name=q]');
-      let searchEngine=document.querySelector('input[name:engine]:checked');
+      let searchEngine=document.querySelector('input[name=engine]:checked');
       searchForm.addEventListener('submit',function(){
         if(searchWord.value==="" ||searchEngine.value===""){
           alert("All fields are required!");
