@@ -12,7 +12,8 @@
         'bing':'https://www.bing.com/search',
         'ask':'https://www.ask.com/web'
       }
-      console.log(actions);
+      let action=actions[engine.value];
+      console.log(action);
     }
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
