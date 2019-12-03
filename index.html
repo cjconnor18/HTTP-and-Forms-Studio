@@ -6,8 +6,13 @@
 		// TODO: create a handler
     function setSearchEngine(){
       let engine=document.querySelector('input[name=engine]:checked')
-      
-      console.log(engine.value);
+      let actions={
+        'google':'https://www.google.com',
+        'duckDuckGo':'https://duckduckgo.com/',
+        'bing':'https://www.bing.com/search',
+        'ask':'https://www.ask.com/web'
+      }
+      console.log(actions);
     }
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
