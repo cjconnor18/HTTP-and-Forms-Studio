@@ -23,12 +23,12 @@
       let searchWord=document.querySelector('input[name=q]');
       let searchEngine=document.querySelector('input[name=engine]:checked');
       searchForm.addEventListener('submit',function(){
-        if(searchWord.value==="" ||searchEngine.value===""){
+        while (searchWord.value==="" ||searchEngine.value===""){
           alert("All fields are required!");
           event.preventDefault();
-        } else {
-          setSearchEngine();
-        }
+        } 
+        setSearchEngine();
+        
       });
     });
 	</script>
