@@ -23,7 +23,7 @@
       let searchWord=document.querySelector('input[name=q]');
       let searchEngine=document.querySelector('input[name=engine]:checked');
       searchForm.addEventListener('submit',function(){
-        if (searchWord.value==="" ||searchEngine.value===""){
+        if (searchWord.value==="" || isNan(searchEngine.value)){
           alert("All fields are required!");
           
         } else {
