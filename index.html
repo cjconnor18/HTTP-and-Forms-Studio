@@ -17,12 +17,19 @@
       form.setAttribute('action', actionURL);
       console.log(actionURL);
     }
+    
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
-      searchForm.addEventListener('submit',setSearchEngine);
-      
-
-
+      let searchWord=document.querySelector('input[name=q]');
+      let searchEngine=document.querySelector('input[name:engine]:checked');
+      searchForm.addEventListener('submit',
+        if(searchWord.value==="" ||searchEngine===""){
+          alert("All fields are required!");
+          event.preventDefault();
+        } else {
+          setSearchEngine();
+        }
+      );
     });
 	</script>
 </head>
