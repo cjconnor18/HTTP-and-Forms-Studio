@@ -12,13 +12,15 @@
         'bing':'https://www.bing.com/search',
         'ask':'https://www.ask.com/web'
       }
-      let action=actions[engine.value];
-      console.log(action);
+      let actionURL=actions[engine.value];
+      let form=document.getElementById('searchForm');
+      form.setAttribute('action', actionURL);
+      console.log(actionURL);
     }
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
       searchForm.addEventListener('submit',setSearchEngine);
-
+      
 
 
     });
