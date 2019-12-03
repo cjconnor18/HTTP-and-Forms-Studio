@@ -5,7 +5,7 @@
 	<script>
 		// TODO: create a handler
     function setSearchEngine(){
-      let engine=document.querySelector('input[name=engine]:checked')
+      let engine=document.querySelector('input[name=engine]:checked');
       let actions={
         'google':'https://www.google.com',
         'duckDuckGo':'https://duckduckgo.com/',
@@ -21,9 +21,26 @@
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
       let searchWord=document.querySelector('input[name=q]');
-      let searchEngine=document.querySelector('input[name=engine]:checked');
+      let searchEngine=document.getElementsByName('engine');
+      console.log(searchEngine.length);
+      
       searchForm.addEventListener('submit',function(){
-        if (searchWord.value==="" || !searchEngine.value){
+        let searchEngineFalse=false;
+        let x=0;
+        for(let i=0;i<searchEngine.length;i++){
+          console.log(i);
+          if(searchEngine[i].checked){
+            x+=1;
+            console.log(i);
+          }
+        
+        }
+        if(x>0){
+          searchEngineFalse=true;
+        }
+        console.log(x);
+        
+        if (searchWord.value==="" || !searchEngineFalse){
           alert("All fields are required!");
           
         } else {
