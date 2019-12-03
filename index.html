@@ -5,7 +5,9 @@
 	<script>
 		// TODO: create a handler
     function setSearchEngine(){
-      console.log('it runs');
+      let engine=document.querySelector('input[name=engine]:checked')
+      
+      console.log(engine.value);
     }
     window.addEventListener("load", function(){
       let searchForm=document.getElementById('searchForm');
